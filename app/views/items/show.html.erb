@@ -10,6 +10,7 @@
           <div class="buttons text-center">
             <% if logged_in? %>
               <%= render 'ownerships/want_button', item: @item %>
+              <%= render 'ownerships/have_button', item: @item %>
             <% end %>
           </div>
         </div>
@@ -30,12 +31,16 @@
         </div>
       </div>
     </div>
+
     <div class="have-users">
       <div class="panel panel-default">
         <div class="panel-heading text-center">
-          Haveしたユーザ
+          haveしたユーザ
         </div>
         <div class="panel-body">
+          <% @have_users.each do |user| %>
+            <%= link_to user.name, user_path(user) %>
+          <% end %>
         </div>
       </div>
     </div>

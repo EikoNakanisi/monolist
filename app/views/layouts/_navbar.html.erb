@@ -16,6 +16,7 @@
           <% if logged_in? %>
             <li>
               <%= link_to new_item_path do %>
+                <% @w_or_h='w' %>
                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                 アイテムを追加
               <% end %>
